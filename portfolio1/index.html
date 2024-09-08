@@ -48,13 +48,11 @@
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
                     <p>Hi, I am Spandan Nag, a sophomore at Techno Main Salt Lake, Kolkata. As a Computer Science and Engineering 								student specialising in Artificial Intelligence and Machine Learning, I am dedicated to exploring and mastering 						the dynamic field of technology. My current focus is on full-stack development, where I am enhancing my skills 							across both front-end and back-end technologies. I possess foundational knowledge in Java, C++, and 									JavaScript, which supports my capability to tackle diverse programming challenges. Eager to contribute to 								innovative projects and collaborate with industry professionals, I am committed to continuous learning and 								growth in the tech landscape. Feel free to reach out to me
-                        from the contacts page. Thank You!!
-                        
-                    </p>
+                        from the contacts page. Thank You!!</p>
 
                     <div class="tabtitle">
-                        <p class="tablinks activelink" onclick="opentab('skills')">Skills</p>
-                        <p class="tablinks nextlink" onclick="opentab('education')">Education</p>
+                        <p class="tablinks activelink" id = "skillid" onclick="opentabskill()">Skills</p>
+                        <p class="tablinks nextlink" id = "eduid" onclick="opentabedu()">Education</p>
                     </div>
                     <div class="tabcontents activetab" id="skills">
                         <ul>
@@ -66,8 +64,8 @@
                     <div class="tabcontents nexttab" id="education">
                         <ul>
                             <li><span>ICSE 2022</span><br>Qualified ICSE with 96% from Vivekananda Mission School</li>
-                            <li><span>ISC 2024</span><br>Qualified ISE with 95.5% from Vivekananda Mission School</li>
-                            <li><span>B-TECH CSE 2024-28</span><br>Cuurently in 1st year studying at Techno Main Salt lake</li>
+                            <li><span>ISC 2024</span><br>Qualified ISC with 95.5% from Vivekananda Mission School</li>
+                            <li><span>B-TECH CSE 2024-28</span><br>Curently in 1st year studying at Techno Main Salt lake</li>
                         </ul>
                     </div>
                 </div>
@@ -123,7 +121,7 @@
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn">Submit</button>
                     </form>
-                    <span id="msg">HELLO</span>
+                    <span id="msg"></span>
                 </div>
 
             </div>
