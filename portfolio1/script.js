@@ -1,23 +1,17 @@
 // -------------------skills and education--------------------
-var tablinks = document.getElementsByClassName("tablinks");
-var tabcontents = document.getElementsByClassName("tabcontents");
-function opentab(tabname) {
-    for(let tablink of tablinks){
-        tablink.classList.remove("activelink");
-    }
-    for(let tabcontent of tabcontents){
-        tabcontent.classList.remove("activetab");
-    }
-    // Event.currentTarget.classList.add("nextlink");
-    // document.getElementsById(tabname).classList.add("nexttab");
-    for(let tablink of tablinks){
-        tablink.classList.add("nextlink");
-    }
-    for(let tabcontent of tabcontents){
-        tabcontent.classList.add("nexttab");
-    }
-}
+const tablinks = document.getElementsByClassName("tablinks");
+const tabcontents = document.getElementsByClassName("tabcontents");
+const skillselect = document.getElementById('skills'); 
+const eduselect = document.getElementById('education');
 
+function opentabskill() {
+    skillselect.style.display = "inline";
+    eduselect.style.display = "none";
+}
+function opentabedu() {
+    eduselect.style.display = "inline";
+    skillselect.style.display = "none";
+}
 // ---------------sidemenu---------------------------------------------------
 
 var sidemenu = document.getElementById("sidemenu");
