@@ -14,6 +14,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
+    
     background-size: cover;
     background-position: center;
 }
@@ -26,18 +27,9 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.logo{
-    width: 147px;
-    color: white;
-    font-size: 60px;
-    font-weight: 600;
-}
-.logo :nth-child(1){
-    color: rgb(243, 26, 160);
-    font-size: 90px;
-}
-.logo :nth-child(2){
-    bottom: 4px;
+.logo > img{
+    width: 80px;
+    height: auto;
 }
 nav ul li{
     display: inline-block;
@@ -47,18 +39,22 @@ nav ul li{
 nav ul li a{
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 23px;
     position: relative;
+}
+nav ul li a:hover{
+    color: #69E584;
 }
 nav ul li a::after{
     content: '';
     width: 0;
     height: 4px;
-    background-color: rgb(241, 182, 44);
+    background-color: #02e433;
     position: absolute;
     left: 0;
     bottom: -6px;
     transition: 0.5s;
+   
 }
 nav ul li a:hover::after{
     width: 100%;
@@ -79,7 +75,7 @@ nav ul li a:hover::after{
     font-family: "Playwrite CU", cursive;
 }
 .header-text h1 span{
-    color: rgb(193, 55, 214);
+    color: #69E584;
 }
 /* ------------------------about------------------------------------------------------ */
 #about{
@@ -96,14 +92,19 @@ nav ul li a:hover::after{
 .about-col-1 img{
     width: 100%;
     border-radius: 20px;
+    
 }
 .about-col-2{
     flex-basis: 60%;
+    font-size: 20px;
+}
+.about-col-2 > p{
+    margin: 13px 0;
 }
 .subtitle{
     font-size: 62px;
     font-weight: 500;
-    color: white;
+    color: #69E584;
 }
 .tabtitle{
     display: flex;
@@ -120,16 +121,16 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: rgb(208, 52, 247);
+    background: #69E584;
     position: absolute;
     left: 0;
     bottom: -8px;
     transition: 0.5s;
 }
-.tablinks.activelink::after{
+#skillid:hover:after{
     width: 50%;
 }
-.tablinks.nextlink::after{
+#eduid:hover:after{
     width: 50%;
 }
 .tabcontents ul li{
@@ -137,7 +138,7 @@ nav ul li a:hover::after{
     margin: 10px 0;
 }
 .tabcontents ul li span{
-    color: rgb(252, 133, 252);
+    color: #69E584;
     font-size: 15px;
 }
 .nexttab{
@@ -158,7 +159,7 @@ nav ul li a:hover::after{
     margin-top: 51px;
 }
 .serviceslist div{
-    background: gray;
+    background: rgb(49, 48, 48);
     padding: 43px;
     font-size: 15px;
     font-weight: 300;
@@ -181,8 +182,69 @@ nav ul li a:hover::after{
     display: inline-block;
 }
 .serviceslist div:hover{
-    background: rgb(182, 53, 233);
+    background: #02811e;
     transform: translateY(-15px);
+}
+
+/* ------------------------portfolio-------------------- */
+#portfolio{
+    padding: 50px 0;
+}
+.worklist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 42px;
+    margin-top: 51px;
+}
+.work{
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #69E584);
+    border-radius: 13px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:0 40px;
+    text-align: center;
+    font-size: 15px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+.layer a{
+    margin-top: 22px;
+    color: #69E584;
+    font-size: 20px;
+    line-height: 62px;
+    background: #fff;
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
 }
 /* -----------------contact----------------------------- */
 
@@ -217,7 +279,7 @@ nav ul li a:hover::after{
 .btn{
     display: inline-block;
     padding: 10px 30px;
-    background-color: rgb(236, 60, 113);
+    background-color: #1b5728;
     color: white;
     border-radius: 9px;
     cursor: pointer;
@@ -246,7 +308,7 @@ form input, form textarea{
 }
 
 /* -----------------------------------responsive---------------------------- */
-nav img{
+nav #mobile_view{
     display: none;
 }
 @media only screen and (max-width: 600px){
@@ -255,19 +317,19 @@ nav img{
         font-size: 17px;
         flex-direction: column-reverse;
     }
-    .header-text h1, div{
-        font-size: 24px;
-    }
     .header-text h3{
         font-size: 16px;
     }
     .header-text .left-section{
-        width: 60%;
+        max-width: 100%;
     }
     .header-text .right-section{
-        width: 60%;
+        max-width: 100%;
     }
-    nav img{
+    .left-section h1{
+        font-size: 30px;
+    }
+    nav #mobile_view{
         display: block;
     }
     nav ul{
@@ -277,7 +339,7 @@ nav img{
         width: 200px;
         height: 100vh;
         padding-top: 52px;
-        background: rgb(221, 87, 255);
+        background: #69E584;
         z-index: 2;
         transition: right 0.5s;
     }
@@ -291,6 +353,7 @@ nav img{
         left: 27px;
         cursor: pointer;
     }
+    
     .subtitle{
         font-size: 40px;
     }
@@ -329,28 +392,29 @@ nav img{
     justify-content: space-around;
     align-items: center;
     margin: 36px 0;
-}
-.header-text > div{
-    width: 45%;
+    flex-direction: column-reverse;
 }
 .left-section{
-   font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.left-section .buttons{
-    padding: 30px 0;
+.left-section h1{
+    font-size: 80px;
 }
-.left-section .btn{
-    padding: 12px;
-    background: rgb(2 9 49 / 61%);
-    color: white;
-    border: 2px solid white;
-    border-radius: 9px;
-    font-size: 16px;
+.left-section h3, div{
+    font-size: 25px;   
 }
 .right-section img{
-    width: 78%;
-    margin: 38px 0;
+    border-radius: 50%;
+    height: 220px;
+    width: 220px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 6px solid rgba(255, 255, 255, 0.1);
 }
 .left-section span{
-    color: rgb(233, 23, 23);
+    color: #69E584;
 }
